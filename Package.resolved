@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "CopyOnWrite",
+        "repositoryURL": "https://github.com/aggie33/CopyOnWrite",
+        "state": {
+          "branch": "main",
+          "revision": "3233a4aeba2fbfb36666de294d811984b9134b40",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}
