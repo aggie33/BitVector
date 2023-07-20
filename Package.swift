@@ -11,11 +11,14 @@ let package = Package(
             name: "BitVector",
             targets: ["BitVector"]),
     ],
+    dependencies: [
+        .package(url: "https://github.com/aggie33/CopyOnWrite", .branch("main")),
+    ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
         .target(
-            name: "BitVector"),
+            name: "BitVector", dependencies: ["CopyOnWrite"]),
         .testTarget(
             name: "BitVectorTests",
             dependencies: ["BitVector"]),

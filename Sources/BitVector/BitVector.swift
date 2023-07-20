@@ -2,13 +2,14 @@
 // https://docs.swift.org/swift-book
 
 import CoreFoundation
+import CopyOnWrite
 
-extension CFBitVector: InheritanceReferenceCopyable {
-    var immutable: CFBitVector {
+extension CFBitVector: PairReferenceCopyable {
+    public var immutable: CFBitVector {
         self
     }
     
-    func mutableCopy() -> CFMutableBitVector {
+    public func mutableCopy() -> CFMutableBitVector {
         CFBitVectorCreateMutableCopy(nil, 0, self)
     }
 }

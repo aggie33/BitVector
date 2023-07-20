@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CopyOnWrite
 
 extension BitVector: RangeReplaceableCollection {
     public init() {
