@@ -72,9 +72,9 @@ extension Bit: RawRepresentable {
     public var rawValue: UInt32 {
         switch self {
             case .off:
-                0
+                return 0
             case .on:
-                1
+                return 1
         }
     }
     
@@ -123,3 +123,44 @@ extension Bit {
     }
 }
 
+extension Bit {
+    /// Performs a bitwise AND operation.
+    public static func & (lhs: Self, rhs: Self) -> Self {
+        switch (lhs, rhs) {
+            case (.on, .on):
+                return .on
+            case (.off, .on), (.off, .off), (.on, .off):
+                return .off
+        }
+    }
+    
+    /// Peforms a bitwise OR operation.
+    public static func | (lhs: Self, rhs: Self) -> Self {
+        switch (lhs, rhs) {
+            case (.off, .off):
+                return .off
+            case (.on, .on), (.on, .off), (.off, .on):
+                return .on
+        }
+    }
+    
+    /// Performs a bitwise XOR operation.
+    public static func ^ (lhs: Self, rhs: Self) -> Self {
+        switch (lhs, rhs) {
+            case (.off, .on), (.on, .off):
+                return .on
+            case (.off, .off), (.on, .on):
+                return .off
+        }
+    }
+    
+    /// Performs a bitwise NOT operation.
+    public static prefix func ! (rhs: Self) -> Self {
+        switch rhs {
+            case .on:
+                return .off
+            case .off:
+                return .on
+        }
+    }
+}

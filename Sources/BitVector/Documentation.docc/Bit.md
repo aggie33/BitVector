@@ -18,3 +18,9 @@ A bit which can either be on or off.
 ### Getting information about a bit
 - ``isOn``
 - ``isOff``
+
+### Bitwise operations
+- ``&(_:_:)``
+- ``|(_:_:)``
+- ``^(_:_:)``
+- ``!(_:_:)``
